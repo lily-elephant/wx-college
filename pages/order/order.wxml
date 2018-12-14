@@ -1,0 +1,55 @@
+<view class='container'>
+  <view class='tabs-header bordbd9'>
+    <text class='tabs-item {{currentTab==index ? "active" : ""}}' wx:for="{{tabsArr}}" wx:key="{{index}}" bindtap='tabsHandle' data-idx='{{index}}'>{{item}}</text>
+  </view>
+  <view class='tabs-content' hidden='{{currentTab != 0}}'>
+    <!-- 没有数据 -->
+    <view class='nodata align-c fs99' wx:if="{{count==0 || !isLogin}}">
+      <view class='nodata-tips gap-350'>暂无数据</view>
+    </view>
+    <!-- 数据存在 -->
+    <view wx:else>
+      <view class='item bordbd9' wx:for="{{payList}}" wx:key="{{index}}">
+        <view class='order-time fs99'>下单时间 {{item.create_time}}</view>
+        <text class='price red'>￥{{item.money}}</text>
+        <view class='order-content'>
+          <image class='order-img' src='{{globalimgeurl}}{{item.coursepicture}}'></image>
+          <view class='order-course'>
+            <text class='course-name'>{{item.name}}</text>
+            <view class='course-desc fs66'>{{item.brief}}</view>
+          </view>
+        </view>
+        <view class='btn-wrapper clearfix'>
+          <button size='mini' class='btn-primary f-left bg99' data-ocid='{{item.ocid}}' bindtap='deleteOrder' data-index='{{index}}'>删 除</button>
+          <button size='mini' class='btn-primary f-right bg53' data-ocid='{{item.ocid}}' bindtap='goPayOrder' data-index='{{index}}'>去支付</button>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+  <view class='tabs-content' hidden='{{currentTab != 1}}'>
+    <!-- 没有数据 -->
+    <view class='nodata align-c fs99' wx:if="{{finishList==null||finishList.length==0 || !isLogin}}">
+      <view class='nodata-tips gap-350'>暂无数据</view>
+    </view>
+    <!-- 数据存在 -->
+    <view wx:else>
+      <view class='item bordbd9' wx:for="{{finishList}}" wx:key="{{index}}" bindtap='gojump' data-cid='{{item.cid}}'>
+        <view class='order-time fs99'>下单时间 {{item.create_time}}</view>
+        <text class='price red'>￥{{item.money}}</text>
+        <view class='order-content'>
+          <image class='order-img' src='{{globalimgeurl}}{{item.coursepicture}}'></image>
+          <view class='order-course'>
+            <text class='course-name'>{{item.name}}</text>
+            <view class='course-desc fs66'>{{item.brief}}</view>
+          </view>
+        </view>
+        <view class='order-time fs99'>付款时间 {{item.update_time}}
+          <text class='f-right'>交易完成</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

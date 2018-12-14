@@ -1,0 +1,74 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/service/service",
+    "pages/order/order",
+    "pages/wallet/wallet",
+    "pages/trade/trade",
+    "pages/recharge/recharge",
+    "pages/me/me",
+    "pages/personalinfo/personalinfo",
+    "pages/editinfo/editinfo",
+    "pages/myinfo/myinfo",
+    "pages/feedback/feedback",
+    "pages/aboutus/aboutus",
+    "pages/myfeedback/myfeedback",
+    "pages/personalexam/personalexam",
+    "pages/courselist/courselist",
+    "pages/coursedetail/coursedetail",
+    "pages/answercard/answercard",
+    "pages/result/result",
+    "pages/online/online",
+    "pages/basetest/basetest",
+    "pages/login/login",
+    "pages/identify/identify", 
+    "pages/register/register", 
+    "pages/findpwd/findpwd",
+    "pages/editMyInfo/editMyInfo",
+    "pages/bannerDes/bannerDes",
+    "pages/traning/traning",
+    "pages/searchList/searchList",
+    "pages/interviewrecord/interviewrecord",
+    "pages/giveup/giveup",
+    "pages/psersonalityTest/psersonalityTest",
+    "pages/psersonalityTest2/psersonalityTest2"
+    
+    
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#8abcd1",
+    "navigationBarTitleText": "管家大学",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "asset/img/home.png",
+        "selectedIconPath": "asset/img/home_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "asset/img/order.png",
+        "selectedIconPath": "asset/img/order_active.png",
+        "text": "学习"
+      },
+      {
+        "pagePath": "pages/service/service",
+        "iconPath": "asset/img/service.png",
+        "selectedIconPath": "asset/img/service_active.png",
+        "text": "合同"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "asset/img/me.png",
+        "selectedIconPath": "asset/img/me_active.png",
+        "text": "我的"
+      }
+    ],
+    "color": "#999999",
+    "selectedColor": "#8abcd1"
+  }
+}

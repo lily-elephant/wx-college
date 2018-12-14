@@ -1,0 +1,8 @@
+<image src="../../asset/img/chance.jpg" class='chance-img'></image>
+<view class='main align-c'>
+  您确定放弃该面试吗？
+  <view class='btn-wrapper clearfix'>
+    <button size='mini' class='btn-primary f-left bg99' bindtap='cancelTap'>取  消</button>
+    <button size='mini' class='btn-primary f-right bgc3' bindtap='sureTap'>确定放弃</button>
+  </view>
+</view>

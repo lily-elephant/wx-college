@@ -1,0 +1,156 @@
+
+.info-base{
+  display: flex;
+  padding: 40rpx;
+  position: relative;
+}
+.info-avatar{
+  display: block;
+  flex: 0 0 100rpx;
+  height: 100rpx;
+  border: 4rpx solid #999;
+  border-radius: 50%;
+}
+.person-base{
+  margin-left: 30rpx;
+  font-size: 30rpx;
+}
+.person-other{
+  display: block;
+  line-height: 1;
+  margin: 6rpx 0;
+  font-size: 24rpx;
+}
+.person-address{
+  display: block;
+  line-height: 1;
+  margin: 10rpx 0;
+  font-size: 24rpx;
+}
+.person-goods{
+  width: 410rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: 28rpx;
+}
+.person-pay{
+  position: absolute;
+  right: 40rpx;
+  bottom: 36rpx;
+  font-size: 28rpx;
+}
+/* .employer-name{
+  display: block;
+  margin: 34rpx 0 0 36rpx;
+} */
+.info-data{
+  padding: 0 40rpx;
+}
+.info-title{
+  display: flex;
+  line-height: 48rpx;
+}
+.tabs-item{
+  flex: 1;
+  padding: 20rpx 0;
+  text-align: center;
+}
+.info-title .active{
+  position: relative;
+}
+.info-title .active::before{
+  position: absolute;
+  bottom: -3rpx;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 7rpx;
+  background: #8abcd1;
+}
+.icon-editavatar{
+  margin-right: 20rpx;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 48rpx;
+}
+.info-detail{
+  padding: 18rpx 36rpx 0;
+}
+.btn-wrapper{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #fff;
+}
+.btn-par{
+  padding: 30rpx 0;
+}
+.row{
+  padding: 18rpx 0;
+  line-height: 1;
+}
+
+.review-wrapper{
+  display: flex;
+  margin-bottom: 160rpx;
+}
+.review-wrapper-ben{
+  display: flex;
+}
+.captions{
+  flex: 0 0 5em;
+  text-align: left;
+}
+.review-self{
+  text-align: justify;
+  line-height: 1.5;
+  margin-top: -5rpx;
+}
+.certificate{
+  padding: 30rpx 0;
+  margin-bottom: 10rpx;
+  background: #fff;
+}
+.certificate-img{
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+}
+.certifate-intro{
+  padding: 20rpx 40rpx;
+  line-height: 2;
+  text-indent: 2em;
+  background: #fff;
+}
+.certifate-time{
+  padding: 30rpx 40rpx;
+  background: #fff;
+  color: #fff;
+}
+.certifate-time-con{
+  padding: 0 14rpx;
+  line-height: 40rpx;
+}
+.exam-item{
+  display: flex;
+  padding: 40rpx 0;
+}
+.icon-exam {
+  flex: 0 0 70rpx;
+  font-size: 40rpx;
+}
+.exam-row{
+  padding: 10rpx 0;
+  line-height: 1;
+}
+.exam-detail{
+  color: #666;
+  width: 100%;
+}
+.caption{
+  padding: 30rpx 0;
+  line-height: 1;
+  width: 100%;
+}

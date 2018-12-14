@@ -1,0 +1,19 @@
+<view class='container'>
+  <text class='question fs66'>1.您擅长的工作是什么？</text>
+  <radio-group class="radio-group" bindchange="jobTap">
+    <label class="radio-label" wx:for="{{answer1}}">
+      {{item.label}}
+      <radio class='radio-btn' value="{{item.value}}" checked="{{item.checked}}" />
+    </label>
+  </radio-group>
+  <text class='question fs66'>2.您从事该工作多少年了？</text>
+  <radio-group class="radio-group" bindchange="yearTap">
+    <label class="radio-label" wx:for="{{answer2}}">
+      {{item.label}}
+      <radio class='radio-btn' value="{{item.value}}" checked="{{item.checked}}" />
+    </label>
+  </radio-group>
+  <view class='align-c btn-wrapper'>
+    <button size='mini' class='btn-primary bgc3' bindtap='submit'>提 交</button>
+  </view>
+</view>

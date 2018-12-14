@@ -1,0 +1,14 @@
+<view class='container'>
+  <view wx:for="{{list}}" wx:key='index'>
+    <text class='question fs66'>{{index+1}}、{{item.question}}</text>
+    <radio-group class="radio-group" bindchange="jobTap" data-type='{{item.type}}' data-no='{{item.no}}' >
+      <label class="radio-label"  wx:for="{{item.list}}" wx:key="index" > 
+        {{index+1}}、{{item.des}}
+        <radio class='radio-btn' value="{{item.score}}" />
+      </label>
+    </radio-group>
+  </view>
+  <view class='align-c btn-wrapper'>
+    <button size='mini' class='btn-primary bgc3' bindtap='submit'>提 交</button>
+  </view>
+</view>

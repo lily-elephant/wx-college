@@ -1,0 +1,40 @@
+<view class='container'>
+  <view class='tips bordbd9'>为了让雇主更快的找到您 请您如实的填写如下信息</view>
+  <view class='form-wrapper'>
+    <form>
+      <view class='row'>
+        <text>真实姓名</text>
+        <input class='inp'></input>
+      </view>
+      <view class='row'>
+        <text>性别</text>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio-label" wx:for="{{sex}}">
+            <radio class='radio' value="{{item.value}}" />
+            <text class='txt'>{{item.label}}</text>
+          </label>
+        </radio-group>
+      </view>
+      <view class='row'>
+        <text>身份证号</text>
+        <input class='inp'></input>
+      </view>
+      <view class='row'>
+        <text>身体状况</text>
+        <radio-group class="radio-group" bindchange="radioChange">
+          <label class="radio-label" wx:for="{{condition}}">
+            <radio class='radio' value="{{item.value}}" />
+            <text class='txt'>{{item.label}}</text>
+          </label>
+        </radio-group>
+      </view>
+      <view class='row'>
+        <text>自我评价</text>
+        <textarea class='review-txt'></textarea>
+      </view>
+      <view class='align-c gap-40'>
+        <button size='mini' class='btn-primary bgc3' bindtap='goExam'>开始评测</button>
+      </view>
+    </form>
+  </view>
+</view>

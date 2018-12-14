@@ -1,0 +1,8 @@
+<view class='score-wrapper align-c fsc3'>
+  <view class='coundownNum'>{{second}}</view>
+  <image class='score-img' src='{{score>=60 ? "../../asset/img/smile.png" : "../../asset/img/sad.png"}}'></image>
+  <view class='caption'>{{score>60 ? "恭喜您通过了考试" : "很遗憾没有通过，请再接再厉"}}</view>
+  <view class='bordbd9 score'>
+    {{score}}<text class='small'>分</text>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+.container{
+  padding: 0 40rpx;
+}
+.title{
+  padding: 36rpx 0 36rpx 40rpx;
+  line-height: 1;
+  margin-bottom: 70rpx;
+}
+.radio{
+  display: none;
+}
+.radio-label{
+  float: left;
+  margin: 0 0 40rpx;
+  width: 50%;
+}
+.txt{
+  display: block;
+  margin: 0 auto;
+  line-height: 56rpx;
+  width: 260rpx;
+  height: 56rpx;
+  text-align: center;
+  border: 1rpx solid #d9d9d9;
+  border-radius: 4px;
+  font-size: 30rpx;
+}
+.active{
+  background: #53add3;
+  color: #fff;
+  border-color:#53add3;
+}
+.btn-wrapper{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 40rpx 0;
+}

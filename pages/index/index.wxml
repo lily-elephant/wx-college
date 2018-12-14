@@ -1,0 +1,158 @@
+<!--index.wxml-->
+<swiper class='swiper-wrapper' indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#c4c4c4" indicator-active-color="#8abcd1">
+  <block wx:for="{{bannerList}}" wx:key='{{index}}'>
+    <swiper-item>
+      <view>
+        <image src="{{globalimgeurl}}{{item.picture}}" class="slide-image" bindtap='jump' data-data='{{item}}'></image>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+<view class='search-wrapper'>
+  <input placeholder='填写您想搜索的内容' class='search-inp' bindinput='searchContent'></input>
+  <button class='bgc3 search-btn' size='mini' bindtap='searchName'>搜索</button>
+</view>
+<view class='tabs-wrapper'>
+  <view class='tabs-header'>
+    <text class="tabs-item fs99 {{currentTab==index ? 'active' : ''}}" wx:for="{{homeTab}}"  wx:key='{{index}}' wx:for-index="index" bindtap='tabsClick' data-idx="{{index}}">{{item}}</text>
+  </view>
+</view>
+<!-- 在线培训 -->
+<view class='tabs-content' hidden="{{currentTab!==0}}">
+  <!-- 没有数据 -->
+  <view class='nodata align-c fs99' wx:if="{{list&&list.length==0}}">
+    <view class='nodata-tips gap-350'>暂无数据</view>
+  </view>
+  <!-- 数据存在 -->
+  <view class='container' wx:else>
+     <view class='item' wx:for="{{list}}" wx:key='{{index}}' wx:for-item="item" wx:for-index="index" data-ccid="{{item.ccid}}" bindtap='goCourseList'>  
+      <!--url='../courselist/courselist?ccid={{item.ccid}}' -->
+      <!-- <view class='must-study bgc3' hidden='{{item.ismust == 1 ? false : true}}'>   
+        <text class='must-study-cap'>必学</text>
+      </view> -->
+      <image src='{{globalimgeurl}}{{item.picture}}' class='item-img'></image>
+      <view class='item-info'>
+        <text class='item-name'>{{item.name}}</text>
+        <view class='item-desc fs66'>{{item.description}}</view>
+        <view class='coursePrice'>
+          <view wx:if="{{isOnline}}" class='salePrice fsdb'>￥{{item.discount}}</view>
+          <view wx:if="{{isOnline}}" class='oriPrice'>¥{{item.price == null ? "0" : item.price}}</view>
+          <button wx:if="{{item.iscanbuy == 1 && isOnline}}" class='priceBtn' catchtap='goBuy' data-ccid="{{item.ccid}}" data-discount='{{item.discount}}'>购买</button>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!-- 实操培训 -->
+<view class='tabs-content' hidden="{{currentTab!==1}}">
+  <view class='container'>
+    <view class='item' wx:for="{{getOfflineTraining}}" wx:key='{{index}}' wx:for-item="item" wx:for-index="index" data-payflag="{{item.payflag}}" data-pic="{{item}}" bindtap='goTraining'>
+      <view class='must-study bgc3'>   <!-- 1是已购 0未购-->
+        <text class='must-study-cap'>{{item.payflag == 1 ? "已购":"未购"}}</text>
+      </view>
+      <image src='{{globalimgeurl}}{{item.pic}}' class='item-img'></image>
+      <view class='item-info'>
+        <text class='item-name'>{{item.name}}</text>
+        <view class='itemCer-desc fs66'>已购人数：{{item.buycount}}</view>
+        <view wx:if="{{isOnline}}" class='item-price fsdb'>¥ {{item.money}}</view>
+      </view>
+    </view>
+  </view>
+  <!-- <view class='rollin-imgwrapper'>
+    <image src='../../asset/img/rollin.jpg' class='rollin-img'></image>
+  </view> -->
+  <!-- <view class='train'>
+    <view class='align-c'>
+      <text class='train-title'>培训时间</text>
+      <text class='train-time fs66'>{{trainTime}}</text>
+      <text class='train-title2'>培训须知</text>
+    </view>
+    <view class='train-need'>
+      <view>1、课前做好听课准备，提前十五分钟进入教室，按指定位置就坐，不迟到，不早退。</view>
+      <view>2、自觉遵守课堂纪律，认真听课，做好笔记，积极参与教学活动。</view>
+      <view>3、自觉维护课堂秩序，课堂上不得任意讲话、走动，禁止吸烟。</view>
+      <view>4、不得将笔记本电脑、ipad等电子设备带进课堂。上课时关闭手机，切实做到上课时间不接电话、不会客。</view>
+    </view>
+    <view class='bar'></view>
+    <view class='rollin-wrapper'>
+      <image src='../../asset/img/bg.jpg' class='bg'></image>
+      <image src='../../asset/img/roll.png' class='roll-img'></image>
+      <view class='rollin'>
+        <view class='rollin-content'>
+          <form>
+            <view class='row'>
+              <label class='row-label'>姓 名</label>
+              <input class='inp' name="name"></input>
+            </view>
+            <view class='row'>
+              <label class='row-label'>手机号码</label>
+              <input class='inp' name="phone"></input>
+            </view>
+            <view class='row'>
+              <label class='row-label'>选择学校</label>
+              <picker bindchange="bindPickerChange" value="{{index}}" range="{{schools}}" class='picker-wrapper {{index==0?"spicker":""}}'>
+                <view class="picker">
+                  {{schools[index]}}
+                  <text class='iconfont icon-arrow_down f-right'></text>
+                </view>
+              </picker>
+            </view>
+            <view class='btn-wrpper align-c'>
+              <button size='mini' class='btn-primary'>立 即 报 名</button>
+            </view>
+          </form>
+        </view>
+      </view>
+    </view>
+    <view class='bar'></view>
+  </view> -->
+</view>
+<!-- 合格证书 -->
+<view class='tabs-content' hidden="{{currentTab!==2}}">
+  <view class='certifate' wx:if="{{certificates&&certificates.length>0}}">
+    <swiper class='cert-wrapper' current="{{currentIndex}}">
+      <block wx:for="{{certificates}}" wx:key="{{index}}">
+        <swiper-item class='cert-item'>
+          <image src="{{globalimgeurl}}{{item.picture}}" class="cert-image" />
+           <view class='certificatesLen'>({{index + 1 }}/{{certificates.length}})</view>
+           <view class='certificatesTxt'>{{item.name}}</view> 
+        </swiper-item>
+      </block>
+    </swiper>
+    <text class='iconfont btn-arrow icon-arrow_l {{currentIndex==0 ? "disabled":""}}' bindtap='leftTap'></text>
+    <text class='iconfont btn-arrow icon-arrow_r {{currentIndex==(certificates.length-1) ? "disabled" : ""}}' bindtap='rightTap'></text>
+  </view>
+  <view wx:else="{{certificates.length==0}}">暂无数据</view>
+  <!-- <view class='get-wrapper fs66'>
+    <text class='get-title'>获取方法</text>
+    <view>分为基础理论和实际操作两部分，讲述家庭礼仪、家庭餐基础、家居保洁、婴幼儿护理、养老护理、家用电器使用等家政服务人员必须的知识和技能。培训结束后，经过考试合格，将颁发4家共同认定的《职业资格培训结业证书》和《家政服务职业培训结业证书》。</view>
+  </view> -->
+  <!-- <view class='bar'></view> -->
+  <!-- <view class='bg-wrapper'>
+    <image class='bg' src='../../asset/img/bg.jpg'></image>
+    <image src='../../asset/img/words.png' class='words'></image>
+    <image src='../../asset/img/arrow.png' class='arrow'></image>
+    <view class='align-c btn-wrapper2'>
+      <button class='btn-primary' size='mini' bindtap='goPersonal'>申 请 测 评</button>
+    </view>
+  </view> -->
+</view>
+
+<!-- 充值弹出层 -->
+<view class="modal-box" hidden="{{hideFlag}}" bindtap="hide">
+  <view class="modal-body">
+    <view class="modal-content align-c">
+      <text>您的账户余额</text>
+      <view class='money'>
+        <text class='dollar'>￥</text><text class='money-count'>{{remaining}}</text><text class='tips' wx:if='{{enoughFlag}}'>（余额不足）</text>
+      </view>
+      <view class='modal-foot clearfix'>
+        <button class='btn-primary cancel f-left' bindtap="close" size='mini'>取消</button>
+        <button class='btn-primary bgc3 f-right' size='mini' bindtap='confirm'>{{enoughFlag ? "充值" : "确认支付"}}</button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='edit-wrapper' bindtap='change'>
+    <text class='iconfont icon-edit'></text>
+</view>

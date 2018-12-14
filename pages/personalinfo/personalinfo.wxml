@@ -1,0 +1,98 @@
+<view class='info-base'>
+  <image src='{{person.headimageurl}}' class='info-avatar'></image>
+  <view class='person-base'>
+    <text class='person-name'>{{person.name== null ? "未填写" : person.name}}</text>
+    <text class='person-other fs99'>{{person.workdate == null ? "0" : person.workdate}}年  {{person.education== null ? "未填写" : person.education}} </text>
+    <view class='person-address fs99'>{{person.address1== null ? "未填写" : person.address1}}</view>
+  </view>
+  <view class='person-pay red'>{{person.salary == null ? "未填写" : person.salary}}元/月</view>
+</view>
+<view class='bar'></view>
+<view class='info-data'>
+  <view class='info-title bordbd9'>
+    <text wx:for="{{tabsArr}}" wx:key='{{index}}' class='tabs-item {{currentTab==index?"active":""}}' data-idx="{{index}}" bindtap='tabHandle'>{{item}}</text>
+  </view>
+  <view class='info-detail' hidden='{{currentTab!=0}}'>
+    <view class='row align-r fs99'>
+      <text class='f-left fs66'>身份证号</text> {{person.idcard == null ? "未填写" : person.idcard}}</view>
+    <view class='row align-r fs99'>
+      <text class='f-left fs66'>手机号码</text> {{person.username}}</view>
+    <view class='row align-r fs99'>
+      <text class='f-left fs66'>性别</text>{{person.sex == null ? "未填写" : person.sex}} </view>
+    <view class='row align-r fs99'>
+      <text class='f-left fs66'>年龄</text>{{person.age}}岁</view>
+    <view class='row align-r fs99'>
+      <text class='f-left fs66'>期望薪资</text>{{person.salary == nul ?"0":person.salary}}元/月</view>
+      <view class='row align-r fs99'>
+      <text class='f-left fs66'>当前薪资</text>{{person.nowsalary == nul ?"0":person.nowsalary}}元/月</view>
+    <view class='row align-r fs99'>
+      <text class='f-left fs66'>籍贯</text> {{person.address1 == null ? "未填写" : person.address1}}{{person.address2 == null ? "" : person.address2}}{{person.address3 == null ? "" : person.address3}}</view>
+    <view class='row align-r fs99'>
+      <text class='f-left fs66'>最高学历</text> {{person.education == null ? "未填写" : person.education}}</view>
+    <view class='row align-r fs99'>
+      <text class='f-left fs66'>婚育状况</text> {{person.marry == null ? "未填写" : person.marry}}</view>
+    <view class='row align-r fs99'>
+      <text class='f-left fs66'>有无驾驶证</text> {{person.isdrive == null ? "未填写" : person.isdrive}}</view>
+    <view class='row align-r fs99'>
+      <text class='f-left fs66'>现居住地</text> {{person.nativeplace == null ? "未填写" : person.nativeplace}}</view>
+    <view class='row fs99 review-wrapper-ben'>
+      <text class='captions fs66'>工作经历</text>
+      <view class='review-self'>{{person.describes == null ? "未填写" : person.describes }}</view>
+    </view>
+
+    <view class='row fs99 review-wrapper'>
+      <text class='captions fs66'>自我评价</text>
+      <view class='review-self'>{{person.brief == null ? "未填写" : person.brief }}</view>
+    </view>
+    <view class='align-c btn-wrapper'>
+      <view class='bar'></view>
+      <view class='btn-par'>
+        <button size='mini' class='btn-primary bgc3' bindtap='goNeed' data-person='{{person}}'>编辑</button>
+      </view>
+    </view>
+  </view>
+  <view hidden='{{currentTab!=1}}'>
+    <view class='nodata align-c fs99' wx:if="{{exams&&exams.length==0}}">
+      <view class='nodata-tips gap-350'>暂无数据</view>
+    </view>
+    <!-- 数据存在 -->
+    <view class='container' wx:else>
+      <view class='exam-item bordbd9' wx:for="{{exams}}" wx:key='{{index}}'>
+        <text class='iconfont icon-exam fsc3'></text>
+        <view class='exam-detail'>
+          <view class='exam-row align-r'>
+            <text class='f-left'>考试时间</text>
+            <text class='fs99'>{{item.time}}</text>
+          </view>
+          <view class='exam-row align-r'>
+            <text class='f-left'>考试模块</text> {{item.name}}
+          </view>
+          <view class='exam-row align-r'>
+            <text class='f-left'>考试得分</text>
+            <text class='red'>{{item.score}}分</text>
+          </view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+  <view hidden='{{currentTab!=2}}'>
+    <view wx:if="{{certificatelist&&certificatelist.length==0}}" class='align-c fs99 gap-350'>暂未获得任何证书</view>
+    <view wx:for='{{certificatelist}}' wx:key='index' wx:for-item='certificate'>
+      <view class='certificate'>
+        <image src='{{globalimgeurl}}{{certificate.picture}}' mode='widthFix' class='certificate-img'></image>
+        <view class='certifate-intro'>
+          {{certificate.name}}
+        </view>
+        <view class='certifate-time'>
+          <view class='bgc3 align-r certifate-time-con'>
+            <text class='f-left'>获取时间</text>{{certificate.create_time}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view hidden='{{currentTab!=3}}'>
+    <view class='caption fs66' bindtap='goTest' data-cansubmit='{{person.result == null?"yse":"no"}}'>{{person.result == null ? "1、九型人格测试" : "1、已测试"}}</view>
+    <view class='caption fs66' bindtap='goTest2' data-cansubmit='{{person.result2 == null?"yse":"no"}}'>{{person.result2 == null ? "2、卡特尔16种人格因素测试" : "2、已测试"}}</view>
+  </view>
+</view>

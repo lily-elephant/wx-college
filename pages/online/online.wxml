@@ -1,0 +1,20 @@
+<view class='container'>
+  <view class="section bordbd9">
+    <picker class='picker-wrapper' bindchange="bindPickerChange" value="{{index}}" range="{{objectArray}}" range-key="{{'name'}}">
+      <view class="picker">
+        <text class='caption bgc3'>考试科目</text>
+        {{objectArray[index].name}}
+        <text class='iconfont icon-arrow_down'></text>
+      </view>
+    </picker>
+  </view>
+  <view class='title'>题型介绍</view>
+  <view class='sub-intro '>此试卷共 {{count}} 道题。</view>
+  <!-- <view class='sub-title fs99'>单项选择</view> -->
+  <view class='sub-intro'>单项选择{{single}}道，每题只有1个正确答案。</view>
+  <!-- <view class='sub-title fs99'>多项选择</view> -->
+  <view class='sub-intro'>多项选择{{multiple}}道，每题至少有2个正确答案。</view>
+  <view class='align-c btn-wrapper'>
+    <button class='btn-primary bgc3' size='mini' bindtap='goExam'>开始考试</button>
+  </view>
+</view>

@@ -1,0 +1,86 @@
+<!-- 头图 -->
+<view class="img-wrapper">
+  <image class='img' mode="aspectFill" src="{{globalimgeurl}}{{(course.ortherdata[0].picture)}}"></image>
+</view>
+<view class='course-wrapper'>
+  <!-- 课程名 -->
+  <view class='course-info bordbd9'>
+    <text class='course-name'>{{course.ortherdata[0].name}}</text>
+    <view class='course-desc fs66'>{{course.ortherdata[0].description}}</view>
+    <text class='course-count fs99'>共{{course.ortherdata[0].courseCount}}课时</text>
+  </view>
+  <!-- tab切换 -->
+  <view class='tabs-box bordbd9 fs99'>
+    <view wx:for="{{tabList}}" wx:key='{{index}}' class="tabs-label {{currentTab==index ? 'active' : ''}}" bindtap='tabsHandle' data-idx="{{index}}">{{item}}</view>
+  </view>
+  <!-- 目录list -->
+  <view class='tabs-content' hidden="{{currentTab!==0}}">
+
+    <!-- 没有数据 -->
+    <view class='nodata align-c fs99' wx:if="{{course.message == '没有更多数据'}}">
+      <view class='nodata-tips gap-350'>暂无数据</view>
+    </view>
+    <!-- 数据存在 -->
+    <view class='container' wx:else>
+      <view wx:for='{{course.data}}' wx:key="{{index}}" class='course-item bordbd9' bindtap='aaa' data-cid='{{item.cid}}'>
+        <view class='course-item-imgwrapper'>
+        <view class='must-study bgc3' >
+          <!-- <view class='must-study bgc3' hidden='{{item.ismust == 1 ? false : true}}'> -->
+              <text class='must-study-cap'>{{item.islearn == 1 ? "已学" : "未学"}}</text> 
+          </view>
+          <image src="{{globalimgeurl}}{{item.coursepicture}}" class='course-item-img'></image>
+          <!-- isbuy: 1未购买  0 购买 0 false  1  true -->
+        </view>
+        <view class='course-item-info'>
+          <view class='course-item-tit'>{{item.name}}</view>
+          <view class='course-item-counts'>
+            <view class='course-item-visited'>
+              <image src='../../asset/img/visited.png' class='img-icon'></image>
+              <text class='fs99 visited-count'>{{item.viewcount == null ? "0" : item.viewcount}}次</text>
+            </view>
+            <view wx:if="{{isOnline}}" class='course-item-price'>￥{{item.money}}</view>
+            <view wx:if="{{isOnline}}" class='{{item.isbuy ? "buyed" : "nobuy"}}' catchtap='goDetails' data-cid='{{item.cid}}' data-state='{{item.isbuy}}' data-price='{{item.money}}'>{{item.money == 0 ? "免费" : item.isbuy ? "购买" : "已购"}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='{{item.isbuy ? "buyed" : "nobuy"}}' catchtap='goDetails' data-cid='{{item.cid}}' data-state='{{item.isbuy}}' data-price='{{item.money}}'>{{item.money == 0 ? "免费" : item.isbuy ? "购买" : "已购"}}</view>
+      </view> -->
+    </view>
+
+  </view>
+  <!-- 介绍content -->
+  <view class='tabs-content' hidden="{{currentTab!==1}}">
+    <view wx:for="{{obj}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+      <view wx:if="{{item.type == 'picture'}}">
+        <image class="benben" src='{{globalimgeurl}}{{item.path}}' mode='widthFix'></image>
+      </view>
+      <view class='infoIntroduce' wx:elif="{{item.type == 'text'}}">
+        {{item.text}}
+      </view>
+      <view wx:elif="{{item.type == 'video'}}">
+        <video id="myVideos" src="{{globalimgeurl}}{{item.path}}" binderror="listenerVideo"></video>
+      </view>
+      <view wx:else> </view>
+    </view>
+  </view>
+  <view class='align-c btn-wrapper'>
+    <button size='mini' class='btn-primary bgc3' bindtap='goExam'>已学完，去考试</button>
+  </view>
+</view>
+<!-- 充值弹出层 -->
+<view class="modal-box" hidden="{{hideFlag}}" bindtap="hide">
+  <view class="modal-body">
+    <view class="modal-content align-c">
+      <text>您的账户余额</text>
+      <view class='money'>
+        <text class='dollar'>￥</text>
+        <text class='money-count'>{{remaining}}</text>
+        <text class='tips' wx:if='{{enoughFlag}}'>（余额不足）</text>
+      </view>
+      <view class='modal-foot clearfix'>
+        <button class='btn-primary cancel f-left' bindtap="close" size='mini'>取消</button>
+        <button class='btn-primary bgc3 f-right' size='mini' bindtap='confirm'>{{enoughFlag ? "充值" : "确认支付"}}</button>
+      </view>
+    </view>
+  </view>
+</view>

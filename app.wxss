@@ -1,0 +1,104 @@
+/**app.wxss**/
+@import "./asset/font/iconfont.wxss";
+
+page {
+  background: #fff;
+  color: #333;
+  font-size: 32rpx;
+}
+.bg53{
+  background: #53add3; /*蓝色*/
+}
+.bgc3 {
+  background: #8abcd1; /*主题色*/
+}
+.bg99{
+  background: #999;
+}
+.fs33 {
+  color: #333;
+}
+
+.fs66 {
+  color: #666;
+}
+
+.fs99 {
+  color: #999;
+}
+.fsee{
+  color: #eee;
+}
+.fsdb{
+  color: #db3c47; /*红色*/
+}
+.fsc3 {
+  color: #8abcd1; /*主题色*/
+}
+
+.btn-primary {
+  padding: 0 150rpx !important;
+  font-size: 36rpx !important;
+  color: #fff;
+  box-shadow: 0 0 5px #8abcd1;
+}
+
+.clearfix::after {
+  content: ".";
+  clear: both;
+  display: block;
+  overflow: hidden;
+  font-size: 0;
+  height: 0;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+.bordbd9{
+  border-bottom: 1rpx solid #d9d9d9;
+}
+.align-c{
+  text-align: center;
+}
+.align-r{
+  text-align: right;
+}
+.gap-40{
+  padding: 40rpx 0;
+}
+.bar{
+  height: 10rpx;
+  width: 100%;
+  background: #eee;
+}
+.cover{
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.7);
+}
+.red{
+  color: #f25454;
+}
+.orange{
+  color:#eea018;
+}
+.green{
+  color:#12e060;
+}
+.purple{
+  color:#6d7590;
+}
+.gap-350{
+  padding:350rpx 0;
+}
+.marginT18{
+  margin:18rpx 0;
+}

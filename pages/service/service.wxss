@@ -1,0 +1,33 @@
+.container{
+  padding: 0 40rpx;
+  font-size: 30rpx;
+}
+.serve-item{
+  display: flex;
+  padding: 40rpx 0;
+}
+.serve-icon{
+  display: block;
+  flex: 0 0 43rpx;
+  height: 43rpx;
+}
+.serve-content{
+  padding: 0 0 0 30rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.serve-review .active{
+  color: #53add3;
+}
+.icon-star{
+  color: #c3b798;
+}
+.serve-addr{
+  margin: 20rpx 0;
+}
+.serve-desc{
+  margin-top: 20rpx;
+}
+.benben{
+  display: block
+}

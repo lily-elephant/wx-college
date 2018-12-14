@@ -1,0 +1,74 @@
+.me-top{
+  display: flex;
+  padding: 30rpx 40rpx;
+}
+.avatar-wrapper{
+  flex: 0 0 150rpx;
+  height: 150rpx;
+  border: 4rpx solid #eee;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.avatar{
+  display: block;
+  width: 150rpx;
+  height: 150rpx;
+}
+.me-info{
+  padding-left: 26rpx;
+  width: 100%;
+  box-sizing: border-box;
+  color: #fff;
+  font-size: 28rpx;
+}
+.me-name{
+  display: block;
+  line-height: 1;
+  margin: 40rpx 0 20rpx;
+  font-size: 36rpx;
+}
+.icon-arrow-right{
+  font-size: 28rpx;
+}
+.row{
+  padding: 0 40rpx;
+  display: flex;
+}
+.row-l{
+  flex: 0 0 110rpx;
+  padding: 24rpx 0 0 20rpx;
+  box-sizing: border-box;
+  font-size: 40rpx;
+  color: #8abcd1;
+}
+.icon-email{
+  padding:20rpx 0 0 16rpx;
+  font-size: 48rpx;
+}
+.icon-aboutus{
+  font-size: 46rpx;
+}
+.icon-password{
+  font-size: 56rpx;
+}
+.icon-quit{
+  padding-left: 26rpx;
+  color: #cd8183;
+  font-size: 38rpx;
+}
+.caption{
+  padding: 30rpx 0;
+  line-height: 1;
+  width: 100%;
+}
+.myinterview{
+  display: inline-block;
+  vertical-align: top;
+  width: 110rpx;
+  padding: 26rpx 0 0 20rpx;
+}
+.myinter{
+  display: block;
+  width: 41rpx;
+  height: 35rpx;
+}

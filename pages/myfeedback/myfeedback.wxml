@@ -1,0 +1,19 @@
+<!-- 没有数据 -->
+<view class='nodata align-c fs99' wx:if="{{list&&list.length==0}}">
+  <view class='nodata-tips gap-350'>暂无数据</view>
+</view>
+<!-- 数据存在 -->
+<view class='container' wx:else>
+  <view class='item' wx:for="{{list}}" wx:key='index'>
+    <view class='item-main'>
+      <view class='bordbd9 fs99 align-r item-time'>
+        <text class='f-left item-time-cap'>反馈时间</text>{{item.create_time}}</view>
+      <view class='item-feedback'>{{item.comment}}</view>
+      <view class='item-reply' wx:if="{{item.reply}}">
+        <text class='red'>{{item.replyer}}</text>
+        <view class='reply-desc'>{{item.reply}}</view>
+      </view>
+    </view>
+    <view class='bar'></view>
+  </view>
+</view>

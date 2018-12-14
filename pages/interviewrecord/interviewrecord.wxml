@@ -1,0 +1,35 @@
+<!-- 没有数据 -->
+<view class='nodata align-c fs99' wx:if="{{records&&records.length==0}}">
+  <view class='nodata-tips gap-350'>暂无数据</view>
+</view>
+<!-- 数据存在 -->
+<view class='container' wx:else>
+  <view class='record-item bordbd9' wx:for="{{records}}" wx:key='index'>
+    <view class='record-main'>
+      <image class='avatar' src='{{globalimgeurl}}{{item.emheadimageurl}}'></image>
+      <view class='record-content fs99'>
+        <view class='row'>
+          <text class='record-name fs33'>{{item.hkname}}</text>
+          <text class='red f-right'>{{item.salary}}元</text>
+          <text class='record-age f-right'>{{item.age}}岁</text>
+        </view>
+        <view class='row gap-24 align-r'>
+          <text class='f-left'>面试时间</text>
+          <text>{{item.interviewtime}}</text>
+        </view>
+        <view class='row align-r'>
+          <text class='f-left'>{{item.place}}</text>
+          <text class='orange' wx:if="{{item.result=='尚未面试'}}">尚未面试</text>
+          <text class='green' wx:elif="{{item.result=='合同生成中'}}">合同生成中</text>
+          <text class='fs66' wx:elif="{{item.result=='雇主放弃'}}">雇主放弃</text>
+          <text class='green' wx:elif="{{item.result=='已签约'}}">已签约</text>
+          <text class='purple' wx:else="{{item.result=='家政人员放弃'}}">家政人员放弃</text>
+        </view>
+      </view>
+    </view>
+    <view class='btn-wrapper clearfix' wx:if="{{item.result=='尚未面试'}}">
+      <button size='mini' class='btn-primary f-left bg99' bindtap='giveUp' data-interviewid='{{item.interviewid}}' data-index="{{index}}">放 弃</button>
+      <!-- <button size='mini' class='btn-primary f-right bgc3' bindtap='sure' data-interviewid='{{item.interviewid}}' data-index="{{index}}" >雇 佣</button> -->
+    </view>
+  </view>
+</view>

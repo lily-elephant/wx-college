@@ -1,0 +1,266 @@
+/* pages/coursedetail/coursedetail.wxss */
+@import "../courselist/courselist.wxss";
+.video-wrapper {
+  border-bottom: 4rpx solid #d9d9d9;
+  background: #000;
+}
+
+.video {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.icon-wrapper{
+  padding: 40rpx 0;
+}
+.course-item-visited{
+  display: block;
+  float: left;
+  width: 33.3333%;
+  text-align: center;
+  line-height: 36rpx;
+}
+.img-icon{
+  margin-right: 10rpx;
+}
+.img-icon,.visited-count{
+  display: inline-block;
+}
+.course-main{
+  padding: 30rpx 0;
+}
+.b-title{
+  line-height: 1;
+}
+.btn-share{
+  padding: 0!important;
+  background: none;
+  border: none;
+  width: auto!important;
+  font-size: 26rpx;
+  line-height: 36rpx!important;
+}
+.btn-share::after{
+  display: none;
+}
+aaa{
+  width: 100%!important;
+}
+video{
+  width: 100%!important;
+}
+.padding20{
+  padding: 20rpx;
+}
+.paddingT12{
+  padding:12rpx 0;
+}
+.lineheight8{
+  line-height: 1.8;
+  text-indent: 2em;
+}
+/*使屏幕变暗  */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+/*对话框 */
+.commodity_attr_box {
+  /* height: 300rpx; */
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+}
+.commodity_attr_box button{
+  border:none;
+  border-radius:none;
+  background:#fff;
+  font-size:16px;
+  color:#333;
+  height:50px;
+  line-height:50px;
+}
+.commodity_attr_box button::after{
+  border: none;
+}
+.commodity_attr_box button.sendFriend{
+  border-bottom: 1px solid #e6e6e6;
+  border-radius: 0;
+}
+.commodity_attr_box button.cancleShare{
+  border-top: 20rpx solid #eee;
+  border-radius: 0;
+}
+.canvasBox{
+  width: 300px;
+  margin: 0 auto;
+  border: 1px solid #ddd;
+  position:absolute;
+  left:50%;
+  top:50%;
+  transform: translate(-50%,-50%);
+  z-index: 9999999;
+}
+button::after{
+  border: none;
+  border-radius: none;
+}
+.canvasBox button{
+  width: 100%;
+  border-radius: 0;
+  border:none;
+}
+.sava_btn{
+  padding: 8rpx;
+  font-size: 34rpx;
+  color: #999
+}
+.close_btn{
+  width: 56rpx;
+  height: 56rpx;
+  position:absolute;
+  right:0;
+  z-index:999;
+}
+.ben{
+  width: 100%;
+  height: 225px;
+}
+.nobuy,.buyed{
+  position: absolute;
+  bottom: 40rpx;
+  right: 0;
+  padding: 12rpx 30rpx;
+  line-height: 1;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 30rpx;
+}
+.nobuy{
+  background: #53add3;
+}
+.buyed{
+  background: #099;  
+}
+.isbuyed,.isnobuy{
+  padding: 10rpx 20rpx;
+  line-height: 1;
+  border-radius: 3px;
+  color: #fff;
+  font-size: 30rpx;
+  position: absolute;
+  right: 40rpx;
+}
+.isbuyed{
+  background: #099;
+}
+.isnobuy{
+  background: #53add3;
+}
+.modal-box{
+  position:fixed;
+  z-index: 4;
+  width:100%;
+  height:100%;
+  top:0px;
+  background:rgba(0,0,0,0.4);
+  overflow: hidden;
+  }
+
+.modal-body{
+  position:relative;
+}
+
+.modal-content{
+  margin:30% 60rpx 0;
+  padding: 50rpx 0;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+}
+.money{
+  padding: 20rpx 0;
+  font-size: 0;
+}
+.dollar{
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: 44rpx;
+  font-size: 28rpx;
+}
+.money-count{
+  display: inline-block;
+  vertical-align: top;
+  line-height: 1;
+  font-size: 48rpx;
+}
+.tips{
+  display: inline-block;
+  vertical-align: bottom;
+  line-height: 44rpx;
+  font-size: 24rpx;
+}
+.modal-foot{
+  padding: 40rpx 40rpx 0;
+}
+.modal-foot .btn-primary{
+  padding: 0 60rpx!important;
+  box-shadow: none;
+}
+.cancel{
+  color: #333;
+}
+.bg-img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 225px;
+}
+.tip-words{
+  position: relative;
+  height: 100%;
+  text-align: center;
+  color: #fff;
+}
+.tipwords-wrapper{
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  margin-top: -90rpx;
+}
+.tipwords{
+  display: block;
+  padding: 40rpx 20rpx;
+}
+.loginbtn{
+  color:#fff;
+  padding:8rpx 40rpx!important;
+  font-size:24rpx;
+  border-radius:80px;
+  background:#00c806;
+  line-height:1.2!important;
+  margin-top: 10px;
+}
+.course-names{
+  display:block;
+  padding-bottom:12rpx;
+  width:82%;
+  text-align:left;
+}

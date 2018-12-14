@@ -1,0 +1,12 @@
+<view class='align-c'>
+  <text class='fs66 message'>我们将发送验证码到你的手机</text>
+  <view class='phone-wrapper'>
+    <input class='bordbd9 user-inp' bindinput='getPhone' type='number' placeholder='请输入您的手机号'></input>
+  </view>
+  <view class='align-c'>
+    <button class='btn-primary bgc3' size='mini' bindtap='next'>下一步</button>
+  </view>
+  <view class='fs66 go-login' hidden="{{registertype == 0 ? false : true}}">已有账号，
+    <text class='fsc3' bindtap='goLogin'>直接登录</text>
+  </view>
+</view>

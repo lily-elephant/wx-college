@@ -1,0 +1,47 @@
+.logo-wrapper{
+  padding: 12% 0 5%;
+}
+.logo{
+  display: block;
+  margin: 0 auto;
+  width: 175rpx;
+  height: 175rpx;
+}
+.form-wrapper{
+  padding: 0 80rpx;
+}
+.user-inp{
+  margin-bottom: 30rpx;
+  padding: 40rpx 0 30rpx 20rpx;
+  line-height: 1;
+  border-bottom: 1rpx solid #d9d9d9;
+}
+.code-wrapper{
+  position: relative;
+}
+.code-wrapper .user-inp{
+  padding-right: 5em;
+}
+.tips-wrapper{
+  position: absolute;
+  bottom: 30rpx;
+  right: 0;
+  height: 1.4rem;
+  z-index: 10;
+}
+.forget{
+  line-height: 1;
+  padding: 30rpx 12rpx 160rpx;
+  text-align: right;
+  color:#666;
+  font-size: 30rpx;
+}
+.login-footer{
+  position: absolute;
+  bottom: 88rpx;
+  left: 0;
+  padding: 0 80rpx;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}

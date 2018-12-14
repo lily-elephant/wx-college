@@ -1,0 +1,162 @@
+/* pages/exam/exam.wxss */
+page{
+  /* width: 100%; */
+  height: 100%;
+  overflow: hidden;
+}
+.main{
+  height: 100%;
+}
+.container-wrap{
+  position: relative;
+  background: #fff;
+  height: 100%;
+  overflow-y: auto;
+  display: none;
+}
+.visible{
+  display: block;
+}
+.swiper-item{
+  overflow-y: auto;
+}
+.swipper-wrapper{
+  height: 100%;
+}
+.exam-title{
+  position: relative;
+  margin: 0 40rpx;
+  padding: 30rpx 0;
+  line-height: 1;
+}
+.exam-title .icon-arrow_d{
+  position: absolute;
+  top: 22rpx;
+  right: 0;
+  padding: 8rpx;
+}
+.title{
+  margin: 30rpx 0;
+  padding: 0 40rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  background: #eee;
+}
+.section{
+  padding: 0 40rpx;
+  margin-bottom: 100rpx;
+}
+.question{
+  margin:30rpx 0 100rpx;
+}
+.answer{
+  padding: 0 0 0 40rpx;
+}
+.radio-label{
+  display: flex;
+  padding-bottom: 100rpx;
+}
+.radio{
+  flex: 0 0 50rpx;
+  width: 50rpx;
+}
+.txt{
+  margin-top: 5rpx;
+}
+.radio-label .wx-radio-input{
+  vertical-align: top;
+  width: 32rpx;
+  height: 32rpx;
+  box-sizing: border-box;
+}
+.radio-label .wx-radio-input-checked{
+  background: #8abcd1!important;
+  border-color: #8abcd1!important;
+}
+.radio-label .wx-checkbox-input{
+  width: 32rpx;
+  height: 32rpx;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.radio-label .wx-checkbox-input-checked{
+  background: #8abcd1;
+  border-color: #8abcd1;
+}
+.radio-label .wx-checkbox-input-checked::before{
+  color: #fff;
+}
+.exam-nav{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  padding: 8rpx 0;
+  color: #fff;
+}
+.exam-nav .item{
+  flex: 1;
+  text-align: center;
+  font-size: 24rpx;
+}
+.exam-nav .iconfont{
+  display: block;
+  line-height: 1;
+  margin-bottom: 8rpx;
+  height: 36rpx;
+  font-size: 36rpx;
+}
+.exam-nav .gray{
+  color: #666;
+}
+.exam-title{
+  margin: 0 40rpx;
+  padding: 30rpx 0;
+  line-height: 1;
+}
+.title{
+  margin: 30rpx 0 0;
+  padding: 0 40rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  background: #eee;
+}
+.orders-wrapper{
+  display: block;
+  padding: 0 10rpx;
+  font-size: 0;
+}
+.orders-wrapper .item{
+  display: inline-block;
+  margin: 30rpx 30rpx 0 30rpx;
+  width: 60rpx;
+  text-align: center;
+  height: 50rpx;
+  line-height: 50rpx;
+  background: #ddd;
+  border: 1rpx solid #ddd;
+  border-radius: 3px;
+  box-sizing: border-box;
+  font-size: 28rpx;
+}
+.btn-wrapper{
+  padding: 60rpx 0;
+}
+.orders-wrapper .no-answer{
+  background: #fff;
+}
+.orders-wrapper .right{
+  background: green;
+  color: #fff;
+  border-color: green;
+}
+.orders-wrapper .wrong{
+  background: red;
+  color: #fff;
+  border-color: red;
+}
+.ben{
+  color: #999 ;
+  font-size: 20rpx ;
+}

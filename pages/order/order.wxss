@@ -1,0 +1,71 @@
+.container{
+  padding: 10rpx 40rpx 0;
+}
+.tabs-header{
+  display: flex;
+}
+.tabs-item{
+  flex: 1;
+  padding: 30rpx 0;
+  text-align: center;
+  color: #999;
+}
+.tabs-header .active{
+  position: relative;
+  color: #333;
+}
+.tabs-header .active::before{
+  position: absolute;
+  left: 0;
+  bottom: -3rpx;
+  content: '';
+  height: 7rpx;
+  width: 100%;
+  background: #8abcd1;
+}
+.item{
+  position: relative;
+}
+.order-time{
+  padding: 36rpx 0;
+  font-size: 24rpx;
+}
+.price{
+  position: absolute;
+  right: 0;
+  top: 32rpx;
+}
+.order-content{
+  display: flex;
+}
+.order-img{
+  display: block;
+  flex: 0 0 206rpx;
+  height: 126rpx;
+}
+.order-course{
+  padding: 0 0 0 20rpx;
+}
+.course-name{
+  display: block;
+  font-size: 30rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.course-desc{
+  width:100%;
+  font-size:24rpx;
+  display:-webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:3;
+  overflow:hidden;
+}
+.btn-wrapper{
+  padding: 40rpx 0;
+}
+.btn-primary{
+  padding: 0!important;
+  width: 294rpx;
+  box-shadow: none;
+}

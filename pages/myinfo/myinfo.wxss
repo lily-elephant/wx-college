@@ -1,0 +1,41 @@
+.container {
+  padding: 0 40rpx;
+}
+
+.item {
+  padding: 40rpx 0;
+  display: flex;
+}
+
+.info-icon {
+  display: block;
+  flex: 0 0 43rpx;
+  height: 43rpx;
+}
+
+.item-content {
+  position: relative;
+  padding: 0 0 50rpx 28rpx;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 30rpx;
+}
+
+.item-title {
+  margin-bottom: 12rpx;
+}
+
+.item-time {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-size: 26rpx;
+}
+
+.read {
+  color: #999;
+}
+
+.read .item-desc {
+  color: #999;
+}

@@ -1,0 +1,25 @@
+<!-- 没有数据 -->
+<view class='nodata align-c fs99' wx:if="{{list&&list.length==0 || !isLogin}}">
+  <view class='nodata-tips gap-350'>暂无数据</view>
+</view>
+<!-- 数据存在 -->
+<view class='container' wx:else>
+  <view class='serve-item bordbd9' wx:for="{{list}}" wx:key="{{index}}">
+    <image src='../../asset/img/serve.png' class='serve-icon'></image>
+    <view class='serve-content'>
+      <view class='title fs66 align-r clearfix'>
+        <text class='serve-time f-left'>{{item.starttime}} 至 {{item.endtime}}</text>
+      </view>
+      <view class='serve-review fs66 marginT18'>
+        雇主：{{item.emname}}
+      </view>
+      <view class='benben fs66'>
+        薪资：{{item.salary}}元
+      </view>
+      <!-- <view >
+          评价星级：<text class='iconfont icon-star' wx:for="{{item.score}}" wx:key="{{index}}"></text>  
+        </view>  -->
+      <!-- <view class='serve-desc'>评价：{{item.content}}</view> -->
+    </view>
+  </view>
+</view>

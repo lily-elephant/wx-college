@@ -1,0 +1,15 @@
+<!-- 没有数据 -->
+<view class='nodata align-c fs99' wx:if="{{infos&&infos.length==0}}">
+  <view class='nodata-tips gap-350'>暂无数据</view>
+</view>
+<!-- 数据存在 -->
+<view class='container' wx:else>
+  <view class='item bordbd9' wx:for="{{infos}}" bindtap='readTap' data-type='{{item.type}}' data-isread='{{item.isread}}' data-id='{{item.id}}' data-index="{{index}}" wx:key='index'>
+    <image src='../../asset/img/info.png' class='info-icon'></image>
+    <view class='item-content {{item.isread==0 ? "" : "read"}}'>
+      <view class='item-title'>{{item.title}}</view>
+      <view class='item-desc fs66'>{{item.content}}</view>
+      <text class='item-time fs99'>{{item.create_time}}</text>
+    </view>
+  </view>
+</view>

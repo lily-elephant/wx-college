@@ -1,0 +1,18 @@
+/* pages/registerone/registerone.wxss */
+.message{
+  display: block;
+  padding: 36rpx 0;
+  line-height: 1;
+  font-size: 30rpx;
+}
+.phone-wrapper{
+  padding: 60rpx 80rpx 136rpx;
+}
+.user-inp{
+  line-height: 1;
+  padding: 40rpx 20rpx 30rpx;
+  text-align: left;
+}
+.go-login{
+  padding: 90rpx 0 0;
+}

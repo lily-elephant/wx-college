@@ -1,0 +1,29 @@
+.container{
+  padding: 30rpx 50rpx 50rpx 74rpx;
+  color: #fff;
+}
+.wallet-top{
+  font-size: 26rpx;
+  color: #fff;
+}
+.unit{
+  font-size: 20rpx;
+}
+.wallet-remain{
+  display: block;
+  line-height: 1;
+  padding: 30rpx 0;
+  font-size: 60rpx;
+}
+.explain{
+  font-size: 26rpx;
+}
+.icon-arrow_r{
+  font-size: 24rpx;
+}
+.wallet-img{
+  display: block;
+  margin: 90rpx auto 250rpx;
+  width: 313rpx;
+  height: 323rpx;
+}

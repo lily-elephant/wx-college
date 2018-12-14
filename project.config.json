@@ -1,0 +1,166 @@
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.9",
+	"appid": "wxdd268f672e8306c0",
+	"projectname": "butter1449",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 20,
+			"list": [
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "register",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": 2,
+					"name": "basetest",
+					"pathName": "pages/basetest/basetest",
+					"query": "userid=18811011841"
+				},
+				{
+					"id": -1,
+					"name": "me",
+					"pathName": "pages/me/me",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "index",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "personalinfo",
+					"pathName": "pages/personalinfo/personalinfo",
+					"query": "userid=18811011841"
+				},
+				{
+					"id": -1,
+					"name": "coursedetail",
+					"pathName": "pages/coursedetail/coursedetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "courselist",
+					"pathName": "pages/courselist/courselist",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "editinfo",
+					"pathName": "pages/editinfo/editinfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "answercard",
+					"pathName": "pages/answercard/answercard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "online",
+					"pathName": "pages/online/online",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "result",
+					"pathName": "pages/result/result",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "coursedetail",
+					"pathName": "pages/coursedetail/coursedetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "myinfo",
+					"pathName": "pages/myinfo/myinfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "editMyInfo",
+					"pathName": "pages/editMyInfo/editMyInfo",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "rechrage",
+					"pathName": "pages/recharge/recharge",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "trade",
+					"pathName": "pages/trade/trade",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "basetest",
+					"pathName": "pages/basetest/basetest",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "九型人格测试",
+					"pathName": "pages/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "九型人格测试",
+					"pathName": "pages/psersonalityTest/psersonalityTest",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "findpwd",
+					"pathName": "pages/findpwd/findpwd"
+				}
+			]
+		}
+	}
+}

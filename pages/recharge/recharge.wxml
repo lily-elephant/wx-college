@@ -1,0 +1,12 @@
+<view class='container'>
+  <view class='bordbd9 title'>充值金额</view>
+  <radio-group class="radio-group clearfix" bindchange="radioChange">
+    <label class="radio-label" wx:for="{{list}}">
+      <radio value="{{item.money}}" class='radio' checked='{{item.checked}}' />
+      <text class='txt {{item.money==currentIdx?"active":""}}'>充{{item.money}}送{{item.chargemoney - item.money}}</text>
+    </label>
+  </radio-group>
+  <view class='btn-wrapper align-c'>
+    <button size='mini' class='btn-primary bgc3' bindtap='gocharge'>充 值</button>
+  </view>
+</view>

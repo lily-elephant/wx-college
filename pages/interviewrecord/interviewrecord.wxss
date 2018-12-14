@@ -1,0 +1,41 @@
+.container{
+  padding: 0 40rpx;
+}
+.record-item{
+  padding: 40rpx 0;
+}
+.record-main{
+  display: flex;
+}
+.avatar{
+  display: block;
+  flex: 0 0 130rpx;
+  height: 130rpx;
+  border: 4rpx solid #999;
+  border-radius: 50%;
+}
+.record-content{
+  padding-left: 30rpx;
+  line-height: 1;
+  font-size: 28rpx;
+  width: 100%;
+  box-sizing: border-box;
+}
+.record-age{
+  margin-right: 120rpx;
+  font-size: 24rpx;
+}
+.btn-wrapper{
+  padding: 40rpx 0 0;
+}
+.btn-primary{
+  box-shadow: none;
+  padding: 0 80rpx!important;
+}
+.f-left{
+  font-size: 22rpx;
+  margin-top: 8rpx
+}
+.gap-24{
+  padding:24rpx 0;
+}

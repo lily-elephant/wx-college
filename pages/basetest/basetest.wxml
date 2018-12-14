@@ -1,0 +1,20 @@
+<view class='container'>
+  <view wx:for="{{questionList}}" wx:key='index'>
+    <text class='question fs66'>{{index+1}}）、{{item.name}}</text>
+    <checkbox-group wx:if="{{item.examtype == 'MULTIPLE'}}" class="radio-group" bindchange="checkboxChange" data-eid='{{item.eid}}' >
+      <label class="radio-label"  wx:for="{{item.option}}" wx:key="index" data-value='{{item.content}}'> 
+        {{index+1}}、{{item.content}}
+        <checkbox class='radio-btn' value="{{item.oid}}" data-value='{{item.content}}' checked="{{item.isSelected =='1' ?true:false }}" />
+      </label>
+    </checkbox-group>
+    <radio-group wx:if="{{item.examtype == 'SINGLE'}}" class="radio-group" bindchange="jobTap" data-eid='{{item.eid}}' >
+      <label class="radio-label"  wx:for="{{item.option}}" wx:key="index" data-value='{{item.content}}'> 
+        {{index+1}}、{{item.content}}
+        <radio class='radio-btn' value="{{item.oid}}" data-value='{{item.content}}' checked="{{item.isSelected =='1' ?true:false }}" />
+      </label>
+    </radio-group>
+  </view>
+  <view class='align-c btn-wrapper'>
+    <button size='mini' class='btn-primary bgc3' bindtap='submit'>提 交</button>
+  </view>
+</view>

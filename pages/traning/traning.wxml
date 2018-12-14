@@ -1,0 +1,50 @@
+<!-- 头图 -->
+<!-- <view class="img-wrapper">
+   <image class='img' mode="aspectFill" src="{{item.pic}}"></image> 
+</view> -->
+<!-- <view class='course-wrapper'> -->
+  <!-- 课程名 -->
+  <!-- <view class='course-info bordbd9'> -->
+    <!-- <text class='course-name'>{{item.name}}</text> -->
+    <view class='padding20'>
+      <!-- <image src='{{pic}}' mode='widthFix' ></image> -->
+      <view>
+        <view wx:for="{{obj}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+          <view wx:if="{{item.type == 'picture'}}">
+            <image src='{{globalimgeurl}}{{item.path}}' mode='widthFix'></image>
+          </view>
+          <view class="lineheight8" wx:elif="{{item.type == 'text'}}">
+            {{item.text}}
+          </view>
+          <view wx:elif="{{item.type == 'video'}}">
+            <video id="myVideo" src="{{globalimgeurl}}{{item.path}}" binderror="listenerVideo"></video>
+          </view>
+          <view wx:else> </view>
+        </view>
+      </view>
+      <button wx:if="{{isOnline}}" class='{{(item.payflag == 1) ? "trainNobuy" : "traningBuy"}}' data-state='{{item.payflag}}' data-price='{{item.money}}' bindtap='payPop'>
+      {{item.payflag == 1 ? "已购" : '支付￥'+item.money }}
+      </button>
+    </view>
+    <!-- <text class='course-count fs99'>共{{course.ortherdata[0].courseCount}}课时</text> -->
+
+
+  <!-- </view>
+</view> -->
+<!-- 充值弹出层 -->
+<view class="modal-box" hidden="{{hideFlag}}" bindtap="hide">
+  <view class="modal-body">
+    <view class="modal-content align-c">
+      <text>您的账户余额</text>
+      <view class='money'>
+        <text class='dollar'>￥</text>
+        <text class='money-count'>{{remaining}}</text>
+        <text class='tips' wx:if='{{enoughFlag}}'>（余额不足）</text>
+      </view>
+      <view class='modal-foot clearfix'>
+        <button class='btn-primary cancel f-left' bindtap="close" size='mini'>取消</button>
+        <button class='btn-primary bgc3 f-right' size='mini' bindtap='confirm'>{{enoughFlag ? "充值" : "确认支付"}}</button>
+      </view>
+    </view>
+  </view>
+</view>

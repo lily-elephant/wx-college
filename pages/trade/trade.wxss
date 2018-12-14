@@ -1,0 +1,21 @@
+.container{
+  padding: 0 40rpx;
+}
+.item{
+  padding: 36rpx 0 36rpx 20rpx;
+  position: relative;
+}
+.item-time{
+  font-size: 26rpx;
+}
+.item-name{
+  width: 470rpx;
+}
+.item-money{
+  position: absolute;
+  right: 20rpx;
+  bottom: 58rpx;
+}
+.green{
+  color: #32ba6f;
+}

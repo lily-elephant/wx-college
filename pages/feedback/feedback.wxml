@@ -1,0 +1,11 @@
+<view class='container'>
+  <form bindsubmit="formSubmit">
+    <textarea class='txt' bindinput="bindTextAreaBlur" auto-focus placeholder="说出您的问题，我们来解决" name="textarea" />
+    <view class='align-c gap-40'>
+      <text class='fs66' bindtap='goMyfeedback'>我的反馈</text>        
+    </view>
+    <view class='align-c'>
+      <button size='mini' class='btn-primary bgc3 {{!val ? "bgd1":""}}' formType="submit">提  交</button>
+    </view>
+  </form>
+</view>

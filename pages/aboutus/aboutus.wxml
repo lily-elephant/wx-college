@@ -1,0 +1,17 @@
+<view class='padding20'>
+  <!-- <image src='{{pic}}' mode='widthFix' ></image> -->
+  <view>
+    <view wx:for="{{list}}" wx:key = "index" wx:for-item="item" wx:for-index="index">
+      <view wx:if="{{item.type == 'picture'}}"> 
+        <image src='{{globalimgeurl}}{{item.path}}' mode='widthFix' ></image>
+      </view>
+      <view class="lineheight8" wx:elif="{{item.type == 'text'}}">
+        {{item.text}}
+      </view>
+      <view wx:elif="{{item.type == 'video'}}">
+        <video id="myVideo" src="{{globalimgeurl}}{{item.path}}" binderror="listenerVideo"></video>
+      </view>
+      <view wx:else> </view>
+  </view>
+  </view>
+</view>

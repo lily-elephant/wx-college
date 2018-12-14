@@ -1,0 +1,99 @@
+<view class='video-wrapper'>
+  <video hidden='{{show01}}' id="myVideo" class='video' src='{{globalimgeurl}}{{course.video}}' bindtimeupdate='listen_play'></video>
+
+  <view class='ben' hidden='{{show02}}'>
+    <image class='bg-img' src='../../asset/img/cover.jpg'></image>
+    <view class='tip-words'>
+      <view class='tipwords-wrapper'>
+        <text style='display:block;font-size:24rpx;color:#fff;'>收费课程</text>
+        <text style='display:block;padding:5px 0;font-size:24rpx;color:#fff;'>请在登录后观看该课程</text>
+        <button size='mini' class='loginbtn' bindtap='gologin'>登录</button>
+      </view>
+    </view>
+  </view>
+
+  <view class='ben' hidden='{{show03}}'>
+    <image class='bg-img' src='../../asset/img/cover.jpg'></image>
+    <view class='tip-words'>
+      <view class='tipwords-wrapper'>
+        <text style='display:block;font-size:24rpx;color:#fff;'>收费课程</text>
+        <text style='display:block;padding:5px 0;font-size:24rpx;color:#fff;'>请在购买后观看该课程</text>
+        <button wx:if="{{isOnline}}" size='mini' class='loginbtn' bindtap='gopay' data-cid='{{course.cid}}' data-state='{{course.isbuy}}' data-price='{{course.money}}'>购买</button>
+      </view>
+    </view>
+  </view>
+</view>
+<view class='course-wrapper'>
+  <!-- 课程名 -->
+  <view class='course-info bordbd9'>
+    <view wx:if="{{isOnline}}" class='{{course.isbuy ? "isbuyed" : "isnobuy"}}' bindtap='gopay' data-cid='{{course.cid}}' data-state='{{course.isbuy}}' data-price='{{course.money}}'>{{course.money == 0 ? "免费" : course.isbuy ? "购买" : "已购"}}</view>
+    <text class='course-names'>{{course.name}}<text wx:if="{{isOnline}}" class='fsdb'>￥{{course.money}}</text></text>
+    <view class='course-desc fs66'>{{course.brief}}</view>
+  </view>
+  <view class='icon-wrapper bordbd9 clearfix'>
+    <view class='course-item-visited'>
+      <image src='../../asset/img/visited.png' class='img-icon'></image>
+      <text class='fs66 visited-count'>{{course.viewcount == null ? "0" : course.viewcount}}</text>
+    </view>
+    <view class='course-item-visited'>
+      <image src='../../asset/img/shoppingcar.png' class='img-icon'></image>
+      <text class='fs66 visited-count'>{{course.ordercount == null ? "0" : course.ordercount}}</text>
+    </view>
+    <view class='course-item-visited'>
+      <button class='btn-share' bindtap='showModal'>
+        <image src='../../asset/img/share.png' class='img-icon'></image>
+        <text class='fs66 visited-count'>分享</text>
+      </button>
+    </view>
+  </view>
+  <view class='course-main'>
+    <view class='b-title'>课程说明</view>
+    <view class='padding20'>
+      <!-- <image src='{{pic}}' mode='widthFix' ></image> -->
+      <view wx:for="{{obj}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+        <view wx:if="{{item.type == 'picture'}}">
+          <image class='aaa' src='{{globalimgeurl}}{{item.path}}' mode='widthFix'></image>
+        </view>
+        <view class="lineheight8" wx:elif="{{item.type == 'text'}}">
+          {{item.text}}
+        </view>
+        <view wx:elif="{{item.type == 'video'}}">
+          <video id="myVideo" src="{{globalimgeurl}}{{item.path}}" binderror="listenerVideo"></video>
+        </view>
+        <view wx:else> </view>
+      </view>
+    </view>
+  </view>
+</view>
+<!--屏幕背景变暗的背景  -->
+<view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></view>
+<!--弹出框  -->
+<view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+  <button open-type='share' class='sendFriend'>发送给朋友</button>
+  <button bindtap='sharePic' data-coursepicture='{{course.coursepicture}}' data-name='{{course.name}}' data-brief='{{course.brief}}'>生成海报</button>
+  <button bindtap='cancel' class='cancleShare'>取消</button>
+</view>
+
+<view class='canvasBox' hidden='{{showCanvas}}'>
+  <image src='../../asset/img/close.png' class='close_btn' bindtap='close'></image>
+  <canvas canvas-id="mycanvans" style="width:300px;height:300px;" />
+  <button class='sava_btn' hidden='{{sharebtn}}' bindtap='save'>保存到系统相册</button>
+</view>
+
+<!-- 充值弹出层 -->
+<view class="modal-box" hidden="{{hideFlag}}" bindtap="hide">
+  <view class="modal-body">
+    <view class="modal-content align-c">
+      <text>您的账户余额</text>
+      <view class='money'>
+        <text class='dollar'>￥</text>
+        <text class='money-count'>{{remaining}}</text>
+        <text class='tips' wx:if='{{enoughFlag}}'>（余额不足）</text>
+      </view>
+      <view class='modal-foot clearfix'>
+        <button class='btn-primary cancel f-left' bindtap="close_bottom" size='mini'>取消</button>
+        <button class='btn-primary bgc3 f-right' size='mini' bindtap='confirm'>{{enoughFlag ? "充值" : "确认支付"}}</button>
+      </view>
+    </view>
+  </view>
+</view>

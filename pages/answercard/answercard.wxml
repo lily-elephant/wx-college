@@ -1,0 +1,87 @@
+<!-- 题目 -->
+<view class='main'>
+  <swiper class='swipper-wrapper' bindchange='getQuestion' current="{{currentIndex}}">
+    <block wx:for="{{list}}" wx:key="{{index}}">
+      <swiper-item class='swiper-item' catchtouchmove='catchTouchMove'>
+        <view class='exam-title align-c bordbd9'>{{job}}<text class='ben'>(共{{totalScore}}分)</text>
+        </view>
+
+        <!-- <view class='ben'>单选{{singleCount}}道，多选{{mulCount}}道，满分{{totalScore}}分</view> -->
+
+        
+        <!-- <view class='title' wx:if="{{item.examtype == 'SINGLE'}}">单项选择（该题{{item.score}}分）</view>
+        <view class='title' wx:else>多项选择（该题{{item.score}}分）</view> -->
+        <view class='section' wx:if="{{item.examtype== 'SINGLE'}}">
+          <view class='question fs66'>
+            {{index+1}}、【{{item.examtype == 'SINGLE' ? "单选" : "多选"}}】{{item.name}}({{item.score}}分)
+          </view>
+          <view class='answer'>
+            <radio-group class="radio-group" bindchange="radioChange" data-eid='{{item.eid}}' data-type='{{item.examtype}}'>
+              <label class="radio-label" wx:for="{{item.option}}" wx:for-item="option" wx:key='{{index}}'> 
+                <radio class='radio' value="{{option.oid}}" checked="" />
+                <text class='txt'>{{option.content}}</text>
+              </label>
+            </radio-group>
+          </view>
+        </view>
+        <view class='section' wx:else>
+          <view class='question fs66'>
+            {{index+1}}、【{{item.examtype == 'SINGLE' ? "单选" : "多选"}}】{{item.name}}({{item.score}}分)
+          </view>
+          <view class='answer'>
+            <checkbox-group class="radio-group" bindchange="checkboxChange" data-eid='{{item.eid}}' data-type='{{item.examtype}}'>
+              <label class="radio-label" wx:for="{{item.option}}" wx:for-item="option" wx:key='{{index}}'>
+                <checkbox class="radio" value="{{option.oid}}" checked="" />
+                <text class='txt'>{{option.content}}</text>   
+              </label>
+            </checkbox-group>
+          </view>
+        </view>
+      </swiper-item>
+    </block>
+  </swiper>
+
+</view>
+
+<!-- 底部导航 -->
+<view class='exam-nav bgc3'>
+  <view class='item {{!prevFlag ? "gray" : ""}}' bindtap='prevQue'>
+    <text class='iconfont icon-prev'></text>
+    上一题
+  </view>
+  <view class='item' bindtap='answerCard'>
+    <text class='iconfont icon-datika'></text>
+    答题卡
+  </view>
+  <view class='item {{!showSubmit ? "gray" : ""}}' bindtap='submitExam'>
+    <text class='iconfont icon-submit'></text>
+    交卷
+  </view>
+  <view class='item {{!nextFlag ? "gray" : ""}}' bindtap='nextQue'>
+    <text class='iconfont icon-next'></text>
+    下一题
+  </view>
+</view>
+
+<!-- 答题卡 -->
+<view class='container-wrap {{opacityFlag ? "visible" : ""}}' animation="{{animationData}}">
+  <view class='exam-title align-c bordbd9'>
+    {{job}}
+    <text class='iconfont icon-arrow_d' bindtap='fold'></text>
+  </view>
+  <view>
+    <view class='title'>答题卡（共{{count}}题）</view>
+    <view class='orders-wrapper'>
+      <view wx:for="{{arr}}" wx:key='{{index}}' class='item {{item.eid ? "" : "no-answer"}}'bindtap='jump_exam' data-index='{{index}}' data-cantap='{{item.eid ? "true" : "false"}}'>{{index+1}}</view>
+    </view>
+  </view>
+  <!-- <view wx:else>
+    <view class='title'>二、多项选择（共25题，每题2分）</view>
+    <view class='orders-wrapper'>
+      <view wx:for="{{multiple}}" wx:key='{{index}}' class='item {{(!item.eid || !item.value.length) ? "no-answer" : ""}}'>{{index + 1}}</view>
+    </view>
+  </view> -->
+  <view class='align-c btn-wrapper'>
+    <button size='mini' class='btn-primary bgc3' bindtap='submit'>提交并查看结果</button>
+  </view>
+</view>

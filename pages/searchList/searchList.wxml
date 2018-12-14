@@ -1,0 +1,42 @@
+<!-- 没有数据 -->
+<view class='nodata align-c fs99' wx:if="{{course&&course.length==0}}">
+  <text class='nodata-tips'>暂无数据</text>
+</view>
+<!-- 数据存在 -->
+<view class='container' wx:else>
+  <view class='item' wx:for="{{course}}" wx:key='{{index}}' wx:for-item="item" wx:for-index="index" data-ccid="{{item.ccid}}" bindtap='goCourseList'>
+    <!--url='../courselist/courselist?ccid={{item.ccid}}' -->
+    <view class='must-study bgc3' hidden='{{item.ismust == 1 ? false : true}}'>
+      <!-- 1是必学 -->
+      <text class='must-study-cap'>必学</text>
+    </view>
+    <image src='{{globalimgeurl}}{{item.picture}}' class='item-img'></image>
+    <view class='item-info'>
+      <text class='item-name'>{{item.name}}</text>
+      <view class='item-desc fs66'>{{item.description}}</view>
+      <view class='coursePrice'>
+        <view wx:if="{{isOnline}}" class='salePrice fsdb'>￥{{item.discount == null ? "0" : item.discount}}</view>
+        <view wx:if="{{isOnline}}" class='oriPrice'>¥{{item.price== null ? "0" : item.price}}</view>
+        <button wx:if="{{item.iscanbuy == 1 && isOnline}}" class='priceBtn' catchtap='goBuy' data-ccid="{{item.ccid}}" data-discount='{{item.discount}}'>购买</button>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 充值弹出层 -->
+<view class="modal-box" hidden="{{hideFlag}}" bindtap="hide">
+  <view class="modal-body">
+    <view class="modal-content align-c">
+      <text>您的账户余额</text>
+      <view class='money'>
+        <text class='dollar'>￥</text>
+        <text class='money-count'>{{remaining}}</text>
+        <text class='tips' wx:if='{{enoughFlag}}'>（余额不足）</text>
+      </view>
+      <view class='modal-foot clearfix'>
+        <button class='btn-primary cancel f-left' bindtap="close" size='mini'>取消</button>
+        <button class='btn-primary bgc3 f-right' size='mini' bindtap='confirm'>{{enoughFlag ? "充值" : "确认支付"}}</button>
+      </view>
+    </view>
+  </view>
+</view>

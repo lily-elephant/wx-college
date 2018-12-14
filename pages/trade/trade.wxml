@@ -1,0 +1,12 @@
+<!-- 没有数据 -->
+<view class='nodata align-c fs99' wx:if="{{list&&list.length==0}}">
+  <view class='nodata-tips gap-350'>暂无数据</view>
+</view>
+<!-- 数据存在 -->
+<view class='container' wx:else>
+  <view class='item bordbd9' wx:for="{{list}}" wx:key='index'>
+    <view class='item-name'>{{item.businesstype}}</view>
+    <text class='item-time fs99'>{{item.create_time}}</text>
+    <text class='item-money {{item.businesstype=="充值" ? "green" : ""}}'><text>{{item.businesstype== "充值" ? '+' : '-'}}</text>{{item.money / 100 }}元</text>
+  </view>
+</view>

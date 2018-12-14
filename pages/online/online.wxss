@@ -1,0 +1,51 @@
+/* pages/online/online.wxss */
+.container{
+  padding: 30rpx 40rpx;
+}
+.section{
+  padding-bottom: 30rpx;
+}
+.picker-wrapper{
+  line-height: 80rpx;
+  height: 80rpx;
+  border-radius: 5px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #eee;
+}
+.picker{
+  display: flex;
+  position: relative;
+}
+.picker .icon-arrow_down{
+  position: absolute;
+  right: 28rpx;
+  top: 0;
+  line-height: 80rpx;
+}
+.caption{
+  margin-right: 36rpx;
+  flex:0 0 204rpx;
+  width: 204rpx;
+  text-align: center;
+  color: #fff;
+}
+.title{
+  padding: 30rpx 0 20rpx;
+  line-height: 1;
+}
+.sub-title{
+  padding: 24rpx 0 18rpx 40rpx;
+  font-size: 24rpx;
+}
+.sub-intro{
+  padding-left: 40rpx;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+}
+.btn-wrapper{
+  position: absolute;
+  bottom: 160rpx;
+  left: 0;
+  width: 100%;
+}

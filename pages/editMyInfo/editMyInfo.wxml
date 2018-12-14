@@ -1,0 +1,96 @@
+<form class='infoForm fs66' bindsubmit="formSubmit" bindreset="formReset">
+  <view class="section clearfix">
+    <view class="section__title">身份证号</view>
+    <view class='inp-wrapper'><input placeholder='填写身份证号' name="input" class='inputTxt' type='idcard' bindinput='listeneriscardInput' value='{{idcard=="null"?"请填写":idcard}}' /></view>
+  </view>
+  <view class="section clearfix">
+    <view class="section__title" type="number">性别</view>
+    <!-- <input placeholder='填写性别' name="input" bindinput='listenerSexInput' value='{{sex=="null"?"请填写":sex}}' /> -->
+    <picker bindchange="bindPickerChange" value="{{sexIndex}}" range="{{sexArray}}" class='pickerSex'>
+      <view class="picker">
+        {{sex=="null"?"请填写":sex}}
+      </view>
+    </picker>
+  </view>
+  <view class="section clearfix">
+    <view class="section__title" >期望薪资</view>
+    <view class='inp-wrapper'><input type='number' class='inputTxt' placeholder='填写期望薪资' name="input" bindinput='listenerSalaryInput' value='{{salary=="null"?"请填写":salary}}' /></view>
+  </view>
+
+<view class="section clearfix">
+    <view class="section__title" >当前薪资</view>
+    <view class='inp-wrapper'><input type='number' class='inputTxt' placeholder='填写当前薪资' name="input" bindinput='listenernowSalaryInput' value='{{nowsalary=="null"?"请填写":nowsalary}}' /></view>
+  </view>
+
+  <view class="section clearfix">
+    <view class="section__title" >工作时间</view>
+    <view class='inp-wrapper'><input type='number' class='inputTxt' placeholder='填写工作时间单位月' name="input" bindinput='listenerWorkdateInput' value='{{workdate=="null"?"请填写":workdate}}' /></view>
+  </view>
+
+  <!-- <view class="section clearfix">
+    <view class="section__title">籍贯</view>
+    <input placeholder='填写籍贯' name="input" bindinput='listenerAddressInput' value='{{address1=="null"?"请填写":address1}}' />
+  </view> -->
+  <view class="section clearfix">
+    <view class="section__title">所在地区</view>
+    <picker mode="region" value='{{region}}' bindchange='bindRegionChange' custom-item="{{customItem}}" class='pickerSex'>
+      <view class='picker'>{{address1}}{{address2}}</view>
+      <text class='iconfont icon-arrow_down'></text>
+    </picker>
+  </view>
+  <view class="section clearfix">
+    <view class="section__title">详细地址</view>
+    <view class='inp-wrapper'><input class='inputTxt' placeholder='街道、楼牌号等' name="input" bindinput='listenerAddressInput' value='{{address3=="null"?"请填写":address3}}' /></view>
+  </view>
+  <view class="section clearfix">
+    <view class="section__title">最高学历</view>
+    <picker bindchange="bindchangeEducation" value="{{eduIndex}}" range="{{eduArray}}" class='pickerSex'>
+      <view class="picker">
+        {{education=="null"?"请填写":education}}
+      </view>
+      <text class='iconfont icon-arrow_down'></text>
+    </picker>
+  </view>
+
+  <view class="section clearfix">
+    <view class="section__title">婚育状况</view>
+    <picker bindchange="bindchangeMarry" value="{{marryIndex}}" range="{{marryArray}}" class='pickerSex'>
+      <view class="picker">
+        {{marry=="null"?"请填写":marry}}
+      </view>
+      <text class='iconfont icon-arrow_down'></text>
+    </picker>
+  </view>
+
+  <view class="section clearfix">
+    <view class="section__title">有无驾照</view>
+    <picker bindchange="bindchangeIsdrive" value="{{isdriveIndex}}" range="{{isdriveArray}}" class='pickerSex'>
+      <view class="picker">
+        {{isdrive=="null"?"请填写":isdrive}}
+      </view>
+      <text class='iconfont icon-arrow_down'></text>
+    </picker>
+  </view>
+
+<view class="section clearfix">
+    <view class="section__title" type="number">现居住地</view>
+    <view class='inp-wrapper'><input class='inputTxt' placeholder='填写现居住地' name="input" bindinput='listenerPlaceInput' value='{{nativeplace=="null"?"请填写":nativeplace}}' /></view>
+  </view>
+
+<view class="section clearfix">
+    <view class="section__title">工作经历</view>
+    <textarea class='self-estimate' placeholder='填写工作经历' name="input" bindinput='listenerDescribeInput' value='{{describe=="null"?"请填写":describe}}' />
+  </view>
+
+  
+
+
+  <view class="section clearfix">
+    <view class="section__title">自我评价</view>
+    <textarea class='self-estimate' placeholder='填写自我评价' name="input" bindinput='listenerDesInput' value='{{brief=="null"?"请填写":brief}}' />
+  </view>
+  <view class="btn-area">
+    <button class='formSubmit bgc3' bindtap='submit'>保存并提交</button>
+    <button class='formReset bgc3' bindtap="reset">重置</button>
+  </view>
+</form>

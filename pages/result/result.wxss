@@ -1,0 +1,36 @@
+/* pages/result/result.wxss */
+@import "../answercard/answercard.wxss";
+page{
+  background: #fff;
+}
+.score-wrapper{
+  padding: 120rpx 40rpx;
+  font-size: 80rpx;
+  position: relative;
+}
+.coundownNum{
+  position:absolute;
+  right:50rpx;
+  top:35rpx;
+  font-size:40rpx;
+}
+.score-img{
+  display: block;
+  margin: 0 auto;
+  width: 200rpx;
+  height: 200rpx;
+}
+.caption{
+  padding: 50rpx 0;
+  font-size: 30rpx;
+  color: orange;
+}
+.score{
+  padding: 0 0 50rpx;
+  color: orange;
+}
+.small{
+  margin-left: 6rpx;
+  font-size: 32rpx;
+  color: #333;
+}

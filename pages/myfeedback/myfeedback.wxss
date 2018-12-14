@@ -1,0 +1,28 @@
+.item{
+  font-size: 30rpx;
+}
+.item-main{
+  padding: 0 40rpx;
+}
+.item-time{
+  padding: 36rpx 0 24rpx;
+  line-height: 30rpx;
+  font-size: 26rpx;
+}
+.item-time-cap{
+  font-size: 30rpx;
+}
+.item-feedback{
+  padding: 30rpx;
+  line-height: 40rpx;
+  text-align: justify;
+  text-indent: 2em;
+}
+.item-reply{
+  padding: 30rpx 0;
+  border-top: 1rpx solid #d9d9d9;
+}
+.reply-desc{
+  padding: 20rpx 30rpx 0;
+  line-height: 40rpx;
+}

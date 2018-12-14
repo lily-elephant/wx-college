@@ -1,0 +1,31 @@
+<!-- logo -->
+<view class='logo-wrapper'>
+  <image src='../../asset/img/logo.png' class='logo'></image>
+</view>
+<!-- form -->
+<view class='form-wrapper'>
+  <input class='user-inp' bindinput="getPhone" placeholder='请输入手机号' type='number' value="{{phone}}" auto-focus/>
+  <view wx:if="{{flag}}">
+    <input class='user-inp' bindinput="getPwd" placeholder='请输入登录密码' password/>
+  </view>
+  <!-- get identifying code -->
+  <view wx:else class='code-wrapper'>
+    <input class='user-inp' bindinput="getIdentify" placeholder='请输入验证码' type='number' />
+    <view class='tips-wrapper'>
+      <text class='fsc3' hidden="{{waitFlag ? true : false}}" bindtap="getCode">{{msg}}</text>
+      <text class='fs66' hidden="{{waitFlag ? false : true}}">{{second}}s 后重新获取</text>
+    </view>
+  </view>
+  <view class='forget'><text bindtap="goForget">忘记密码</text></view>
+  <view class='align-c'>
+    <button class='btn-primary bgc3' size='mini' bindtap="login">登 录</button>
+  </view>
+</view>
+<!-- footer -->
+<view class='login-footer fs66 clearfix'>
+  <view class='f-left' bindtap="wayLogin">
+    <text wx:if="{{flag}}">手机验证码登录</text>
+    <text wx:else>手机密码登录</text>
+  </view>
+  <view class='f-right' bindtap="goRegister">快速注册</view>
+</view>

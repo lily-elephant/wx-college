@@ -1,0 +1,14 @@
+<view class='bgc3 container'>
+  <view class='wallet-top'>
+    账户余额<text class='unit'>(元)</text>
+  </view>
+  <text class='wallet-remain'>{{remaining}}</text>
+  <view class='explain fsee'>
+    <text>余额可用于支付课程</text>
+    <view bindtap='goTrade' class='f-right'>交易明细<text class='iconfont icon-arrow_r'></text></view>
+  </view>
+</view>
+<image src='../../asset/img/wallet.png' class='wallet-img'></image>
+<view class='align-c'>
+  <button wx:if="{{isOnline}}" size='mini' class='btn-primary bgc3' bindtap='goRecharge'>充 值</button>
+</view>
